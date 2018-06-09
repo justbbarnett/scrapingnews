@@ -1,0 +1,67 @@
+<div>
+
+	<div class="container col-6">
+		{{#each articles}}
+			<div class="article-wrapper col-12">
+				<div class="row">
+					<div class="col-6">
+						<h3><a href= "{{link}}"> {{title}} </a></h3>
+					</div>
+					<div class="col-4"></div>
+					<div class="col-2">
+						{{#if saved}}
+							<a href="/unsaving/{{_id}}">
+								<button data-id={{_id}} class="btn btn-danger unsave">
+									UNSAVE
+								</button>
+							</a>
+						{{else}}
+							<a href="/saving/{{_id}}">
+								<button data-id={{_id}} class="btn btn-primary save">
+									SAVE
+								</button>
+							</a>
+						{{/if}}
+						</a>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-6">
+						<h3>{{notes.title}}</h3>
+					</div>
+					{{#if saved}}
+					<div class="col-6">
+					  <a href="/articles/{{_id}}">
+						  <button data-id={{_id}} class="btn btn-default details-btn">
+								Article Details
+							</button>
+						</a>
+					</div>
+					{{else}}
+					<div class="col-6">
+						<p style="text-align: right">(Save an article to view details)</p>
+					</div>
+					{{/if}}
+				</div>
+				{{#each article.notes}}
+					<h3>{{title}}</h3>
+					<p>{{body}}</p>
+				{{/each}}
+				<div class="row note-form">
+					<form>
+					  <div class="form-group">
+					    <label for="noteTitle">Title</label>
+					    <input type="text" class="form-control" id="noteTitle">
+					  </div>
+					  <div class="form-group">
+					    <label for="noteBody">Body</label>
+					    <textarea class="form-control" id="noteBody" rows="4"></textarea>
+					  </div>
+					  <button type="submit" data-id={{_id}} class="btn btn-primary note-form-submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</div>

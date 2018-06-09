@@ -1,0 +1,30 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "Simple Website Scraper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattrmc1/scraper.git"
+  },
+  "author": "Matt McCarthy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattrmc1/scraper/issues"
+  },
+  "homepage": "https://github.com/mattrmc1/scraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.1.4",
+    "request": "^2.87.0"
+  }
+}

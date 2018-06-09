@@ -1,0 +1,38 @@
+<div>
+
+	<div class="container">
+		<h1><a href= "{{article.link}}"> {{article.title}} </a></h1>
+		<br>
+		<hr>
+		<br>
+		<h2>Notes:</h2>
+		<br>
+		{{#each article.notes}}
+			<h3>{{title}}</h3>
+			<p>{{body}}</p>
+			<button data-note={{_id}} class="btn btn-danger delete-note">
+				Delete Note
+			</button>
+			<hr>
+		{{/each}}
+		<br>
+		<button class="btn btn-outline-success add-note">
+			Add Note
+		</button>
+		<br>
+		<div class="row note-form">
+			<form>
+			  <div class="form-group">
+			    <label for="noteTitle">Title</label>
+			    <input type="text" class="form-control" id="noteTitle">
+			  </div>
+			  <div class="form-group">
+			    <label for="noteBody">Body</label>
+			    <textarea class="form-control" id="noteBody" rows="4"></textarea>
+			  </div>
+			  <button type="submit" data-article={{article._id}} class="btn btn-primary note-form-submit">Submit</button>
+			  <button type="button" data-article={{article._id}} class="btn btn-warning note-form-cancel">Cancel</button>
+			</form>
+		</div>
+	</div>
+</div>
