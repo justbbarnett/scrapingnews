@@ -28,15 +28,23 @@
 				<hr>
 				<div class="row">
 					<div class="col-6">
-						<h3>{{notes.title}}</h3>
+						<h3>{{article.notes.title}}</h3>
 					</div>
 					{{#if saved}}
 					<div class="col-6">
+						{{#each notes}}
+							<h3>{{title}}</h3>
+							<p>{{body}}</p>
+						{{/each}}
+					</div>
+					<div class="col-6">
+
 					  <a href="/articles/{{_id}}">
 						  <button data-id={{_id}} class="btn btn-default details-btn">
 								Article Details
 							</button>
 						</a>
+
 					</div>
 					{{else}}
 					<div class="col-6">
@@ -44,10 +52,7 @@
 					</div>
 					{{/if}}
 				</div>
-				{{#each article.notes}}
-					<h3>{{title}}</h3>
-					<p>{{body}}</p>
-				{{/each}}
+
 				<div class="row note-form">
 					<form>
 					  <div class="form-group">
